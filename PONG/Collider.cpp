@@ -68,11 +68,3 @@ bool CheckBoundsCollision(const Rectangle& object)
 
     return false;
 }
-
-void SetRandomColliderPosition(Vector2D& position, const float screenWidth, const float screenHeight)
-{
-    position.x = GetRandomFloat(0.f, screenWidth);
-    position.y = GetRandomFloat(0.f, screenHeight);
-}
-
-

@@ -19,6 +19,3 @@ bool CheckCollision(const Rectangle& object, const Rectangle& other);
 bool CheckCollision(const Circle& object, const Rectangle& other);
 bool CheckBoundsCollision(const Circle& object);
 bool CheckBoundsCollision(const Rectangle& object);
-void SetRandomColliderPosition(Vector2D& position, float screenWidth, float screenHeight);	
-
-
