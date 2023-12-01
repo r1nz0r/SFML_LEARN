@@ -31,3 +31,14 @@
 *.out
 *.app
 /.vs/SFML_LEARN
+
+# temporary directories
+x64
+x86
+.cache/
+.idea/
+.vs/
+.vscode/
+build/
+cmake-build-*/
+CMakeUserPresets.json
