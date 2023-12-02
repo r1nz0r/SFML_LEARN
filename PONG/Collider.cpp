@@ -1,8 +1,8 @@
 ﻿#include <SFMl/Graphics.hpp>
 #include <SFML/System/Vector2.hpp>
-#include "Math.h"
 #include "Collider.h"
 #include "Constants.h"
+#include "Ball.h"
 
 
 bool CheckCollision(const Circle& object, const Circle& other)
@@ -65,6 +65,27 @@ bool CheckBoundsCollision(const Rectangle& object)
     {
         return true;
     }
+
+    return false;
+}
+
+BounceDirection CheckVerticalBoundsCollision(const Ball& ball)
+{
+    BounceDirection bounceDirection = BounceDirection::None;
+    
+    if (ball.position.y - ball.radius <= 0)
+        bounceDirection = BounceDirection::Down;
+    else if (ball.position.y + ball.radius >= SCREEN_HEIGHT)
+        bounceDirection = BounceDirection::Up;
+    
+    return bounceDirection;
+}
+
+bool CheckHorizontalBoundsCollision(const Ball& ball)
+{
+    if (ball.position.x + ball.radius >= SCREEN_WIDTH ||
+        ball.position.x - ball.radius <= 0)
+        return true;
 
     return false;
 }
