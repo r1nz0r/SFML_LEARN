@@ -1,10 +1,7 @@
 #include <process.h>
 #include <SFML/Graphics.hpp>
-
-#include "Ball.h"
 #include "Constants.h"
 #include "Game.h"
-#include "Paddle.h"
 
 /*
 Две прямоугольных платформы размещены в противоположных краях экрана.

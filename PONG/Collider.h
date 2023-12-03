@@ -16,10 +16,8 @@ struct Rectangle
     Vector2D size;
 };   
 
-bool CheckCollision(const Circle& object, const Circle& other);
-bool CheckCollision(const Rectangle& object, const Rectangle& other);
 bool CheckCollision(const Circle& object, const Rectangle& other);
 bool CheckBoundsCollision(const Circle& object);
 bool CheckBoundsCollision(const Rectangle& object);
-BounceDirection CheckVerticalBoundsCollision(const Ball& ball);
-bool CheckHorizontalBoundsCollision(const Ball& ball);
+bool CheckHorizontalBoundsCollision(const Circle& object);
+bool CheckVerticalBoundsCollision(const Circle& object);

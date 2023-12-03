@@ -4,32 +4,6 @@
 #include "Constants.h"
 #include "Ball.h"
 
-
-bool CheckCollision(const Circle& object, const Circle& other)
-{
-    const float squareDistance = (object.position.x - other.position.x) * (object.position.x - other.position.x) +
-        (object.position.y - other.position.y) * (object.position.y - other.position.y);
-    const float squareRadiusSum = (object.radius + other.radius) * (object.radius + other.radius);
-
-    if (squareDistance <= squareRadiusSum)
-    {
-        return true;
-    }
-
-    return false;
-}
-
-bool CheckCollision(const Rectangle& object, const Rectangle& other)
-{
-    if (fabs(object.position.x - other.position.x) <= (object.size.x + other.size.x) / 2.0f &&
-        fabs(object.position.y - other.position.y) <= (object.size.y + other.size.y) / 2.0f)
-    {
-        return true;
-    }
-
-    return false;
-}
-
 bool CheckCollision(const Circle& object, const Rectangle& other)
 {
     const float rectangleX = std::max(
@@ -69,23 +43,20 @@ bool CheckBoundsCollision(const Rectangle& object)
     return false;
 }
 
-BounceDirection CheckVerticalBoundsCollision(const Ball& ball)
+bool CheckHorizontalBoundsCollision(const Circle& object)
 {
-    BounceDirection bounceDirection = BounceDirection::None;
-    
-    if (ball.position.y - ball.radius <= 0)
-        bounceDirection = BounceDirection::Down;
-    else if (ball.position.y + ball.radius >= SCREEN_HEIGHT)
-        bounceDirection = BounceDirection::Up;
-    
-    return bounceDirection;
+    if (object.position.x + object.radius >= SCREEN_WIDTH ||
+        object.position.x - object.radius <= 0)
+        return true;
+
+    return false;
 }
 
-bool CheckHorizontalBoundsCollision(const Ball& ball)
+bool CheckVerticalBoundsCollision(const Circle& object)
 {
-    if (ball.position.x + ball.radius >= SCREEN_WIDTH ||
-        ball.position.x - ball.radius <= 0)
-        return true;
+    if (object.position.y + object.radius >= SCREEN_HEIGHT ||
+        object.position.y - object.radius <= 0)
+            return true;
 
     return false;
 }
