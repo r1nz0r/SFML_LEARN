@@ -7,8 +7,8 @@ const std::string FONT_NAME = "/Fonts/Roboto-Black.ttf";
 constexpr float SCORE_TEXT_HORIZONTAL_OFFSET = 100.f;
 constexpr float SCORE_TEXT_VERTICAL_OFFSET = 20.f;
 
-constexpr int SCREEN_HEIGHT = 600;
-constexpr int SCREEN_WIDTH = 1000;
+constexpr int SCREEN_HEIGHT = 720;
+constexpr int SCREEN_WIDTH = 1280;
 
 constexpr float PADDLE_WIDTH = 5.f;
 constexpr float PADDLE_HEIGHT = 60.f;
