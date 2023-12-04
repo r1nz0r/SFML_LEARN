@@ -7,17 +7,17 @@ int main()
 {
 	sf::RenderWindow window;
 	window.create(sf::VideoMode(SCREEN_WIDTH, SCREEN_HEIGHT), "Pong");
-	
+
 	std::srand(_getpid());
-	
+
 	Game game;
-	StartGame(game);	
-	
+	StartGame(game);
+
 	while (window.isOpen())
 	{
 		window.clear();
-		
-		sf:: Event event;
+
+		sf::Event event;
 
 		while (window.pollEvent(event))
 		{

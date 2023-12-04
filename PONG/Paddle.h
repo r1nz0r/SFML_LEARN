@@ -8,23 +8,22 @@ struct Ball;
 
 namespace sf
 {
-    class RenderWindow;
+	class RenderWindow;
 }
 
 enum class MoveDirection
 {
-    Up,
-    Down,
-    None
+	Up,
+	Down,
+	None
 };
-
 
 struct Paddle : Rectangle
 {
-    sf::RectangleShape shape;
-    MoveDirection direction;
-    float speed = PADDLE_MOVE_SPEED;
-    Vector2D lastPosition;
+	sf::RectangleShape shape;
+	MoveDirection direction;
+	float speed = PADDLE_MOVE_SPEED;
+	Vector2D lastPosition;
 };
 
 void InitializePaddle(Paddle& paddle, const Vector2D& startPosition);

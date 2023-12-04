@@ -12,19 +12,20 @@ constexpr int SCREEN_WIDTH = 1280;
 
 constexpr float PADDLE_WIDTH = 5.f;
 constexpr float PADDLE_HEIGHT = 60.f;
-constexpr float PADDLE_MOVE_SPEED = 300.f;
+constexpr float PADDLE_MOVE_SPEED = 350.f;
 constexpr float PADDLE_SCREEN_OFFSET = 15.f;
 
-const sf::Vector2f PLAYER_START_POSITION {
-    PADDLE_SCREEN_OFFSET,
-    SCREEN_HEIGHT / 2.f - PADDLE_HEIGHT / 2.f};
+const sf::Vector2f PLAYER_START_POSITION{
+	PADDLE_SCREEN_OFFSET,
+	SCREEN_HEIGHT / 2.f - PADDLE_HEIGHT / 2.f };
 
-const sf::Vector2f AI_START_POSITION {
-    SCREEN_WIDTH - PADDLE_WIDTH - PADDLE_SCREEN_OFFSET,
-    SCREEN_HEIGHT / 2.f - PADDLE_HEIGHT / 2.f};
+const sf::Vector2f AI_START_POSITION{
+	SCREEN_WIDTH - PADDLE_WIDTH - PADDLE_SCREEN_OFFSET,
+	SCREEN_HEIGHT / 2.f - PADDLE_HEIGHT / 2.f };
 
 constexpr float BALL_RADIUS = 7.f;
-constexpr float BALL_SPEED = 500.f;
-const sf::Vector2f BALL_START_POSITION {
-    SCREEN_WIDTH / 2.f,
-    SCREEN_HEIGHT / 2.f};
+constexpr float BALL_INITIAL_SPEED = 450.f;
+constexpr float BALL_ADJUST_SPEED = 300.f;
+const sf::Vector2f BALL_START_POSITION{
+	SCREEN_WIDTH / 2.f,
+	SCREEN_HEIGHT / 2.f };
